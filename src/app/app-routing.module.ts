@@ -8,12 +8,12 @@ import { VerifyComponent } from './pages/auth/verify/verify.component';
 import { DropletComponent } from './pages/droplet/droplet.component';
 import { LandingComponent } from './pages/landing/landing.component';
 
-import { RouterGuard } from "./shared/services/router-guard.guard";
+import { RouterGuard } from './shared/services/router-guard.guard';
 
 const routes: Routes = [
-  { path: '', component: LandingComponent },
-  { path: 'admin', component: AdminComponent, canActivate: [RouterGuard] },
-  { path: 'droplet', component: DropletComponent, canActivate: [RouterGuard] },
+  { path: '', loadChildren: () => import('./pages/landing/landing.module').then(m => m.LandingModule) },
+  { path: 'admin', loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule) , canActivate: [RouterGuard] },
+  { path: 'droplet', loadChildren: () => import('./pages/droplet/droplet.module').then(m => m.DropletModule) , canActivate: [RouterGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forgot', component: ForgotComponent },
