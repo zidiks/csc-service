@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './pages/admin/admin.component';
 import { ForgotComponent } from './pages/auth/forgot/forgot.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { VerifyComponent } from './pages/auth/verify/verify.component';
-import { DropletComponent } from './pages/droplet/droplet.component';
-import { LandingComponent } from './pages/landing/landing.component';
 
 import { RouterGuard } from './shared/services/router-guard.guard';
 
