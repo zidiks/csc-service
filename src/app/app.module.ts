@@ -23,30 +23,30 @@ import { AuthService } from './shared/services/auth.service';
 import { UserService } from './shared/services/user.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    VerifyComponent,
-    ForgotComponent,
-    NavBarComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    AngularFireAuthModule,
-    AngularFireStorageModule
-  ],
-  providers: [
-    AuthService,
-    UserService
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        RegisterComponent,
+        VerifyComponent,
+        ForgotComponent,
+        NavBarComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        AngularFireAuthModule,
+        AngularFireStorageModule
+    ],
+    providers: [
+        AuthService,
+        UserService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

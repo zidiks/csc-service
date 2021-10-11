@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import "colors";
+@import "grid";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -9,4 +11,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .nav-link {
     cursor: pointer;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.content {
+  border-radius: 1.5rem;
+  background: white;
+  padding: 3rem;
+  box-shadow: 1px 5px 15px rgba(0,0,0, 0.01);
+}
+
+:root {
+  --primary-color: #{$primary-color};
+  --hover-primary-color: #{$hover-primary-color};
+  --secondary-color: #{$secondary-color};
+  --tertiary-color: #{$tertiary-color};
+  --orange-color: #{$orange-color};
+  --primary-bg-color: #{$primary-bg-color};
+  --secondary-bg-color: #{$secondary-bg-color};
 }
