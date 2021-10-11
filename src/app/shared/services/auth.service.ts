@@ -11,44 +11,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 
 export class AuthService {
-  private readonly userIdSubject: BehaviorSubject<any> = new BehaviorSubject<any>( null );
-  public readonly userId$: Observable<any> = this.userIdSubject.asObservable();
-
-  private readonly isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>( false );
-  public readonly isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
 
   constructor(
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
     public router: Router,
     public ngZone: NgZone
-  ) {
-    /* Saving user data in localstorage when logged in and setting up null when logged out */
-    this.checkAuth().subscribe((user) => {
-      if (user && user.uid) {
-        this.userIdSubject.next(user.uid);
-        this.isLoggedInSet = true;
-        console.log(this.isLoggedIn);
-        this.router.navigate(['/']);
-      } else {
-        this.userIdSubject.next(null);
-        this.isLoggedInSet = false;
-        this.router.navigate(['login']);
-      }
-    });
-  }
-
-  public checkAuth(): Observable<firebase.User | null> {
-    return this.afAuth.authState;
-  }
-
-  public get isLoggedIn(): boolean | null {
-    return this.isLoggedInSubject.getValue();
-  }
-
-  public set isLoggedInSet(value: boolean) {
-    this.isLoggedInSubject.next( value );
-  }
+  ) {}
 
   // Sign in with email/password
   public SignIn(email: string, password: string): any {
