@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { User } from '../models/user';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
+import {AngularFireAuth} from "@angular/fire/auth";
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +19,15 @@ export class UserService {
 
   constructor(
     private afs: AngularFirestore,
-    private auth: AuthService
+    private auth: AngularFireAuth
   ) {
     this.subscribeUserData();
   }
 
   private subscribeUserData(): void {
-    this.auth.userId$.subscribe(userId => {
+    this.auth.user.subscribe(user => {
+      if (!user) { return; }
+      const userId = user?.uid;
       if (this.userSubscription !== null) { this.userSubscription.unsubscribe(); }
       this.userSubscription = this.afs.doc(`users/${userId}`).snapshotChanges().pipe(
         map(action => {
@@ -39,7 +42,7 @@ export class UserService {
     });
   }
 
-  getLastValue(): User | null {
+  public getLastValue(): User | null {
     return this.userSubject.value;
   }
 }
