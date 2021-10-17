@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavAdminComponent } from './components/nav-admin/nav-admin.component';
 import { RouterModule } from '@angular/router';
 import { MatRippleModule } from '@angular/material/core';
+import { SearchPipe } from './pipes/search.pipe';
 
 const modules = [
   RouterModule,
@@ -11,15 +12,17 @@ const modules = [
 
 @NgModule({
   declarations: [
-    NavAdminComponent
+    NavAdminComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,
     ...modules
   ],
-  exports: [
-    NavAdminComponent,
-    ...modules
-  ]
+    exports: [
+        NavAdminComponent,
+        ...modules,
+        SearchPipe
+    ]
 })
 export class SharedModule { }
