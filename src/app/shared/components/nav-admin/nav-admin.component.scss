@@ -1,0 +1,89 @@
+.nav {
+  top: 1rem;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  &__logo {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    padding: 3rem 0 3rem 1rem;
+    cursor: pointer;
+    &-txt {
+      padding-top: 0.1rem;
+      font-size: 1.6rem;
+      margin-left: 0.6rem;
+      font-weight: 500;
+      &-primary {
+        color: var(--primary-color);
+      }
+    }
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    &-title {
+      margin-top: 4rem;
+      color: var(--tertiary-color);
+      padding-left: 1rem;
+      opacity: 0.8;
+      font-weight: 300;
+      font-size: 0.9rem;
+    }
+    &-item {
+      position: relative;
+      width: 100%;
+      max-width: 18rem;
+      display: flex;
+      border-radius: 1rem;
+      align-items: center;
+      padding: 1.2rem 1rem;
+      margin: 0.2rem 0;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+      svg {
+        fill: var(--tertiary-color);
+        width: 18px;
+        height: 18px;
+      }
+      span {
+        margin-left: 1rem;
+        color: var(--tertiary-color);
+        font-weight: 300;
+        font-size: 1.2rem;
+      }
+      .badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        color: var(--secondary-color);
+        border-radius: 50%;
+        font-size: 0.8rem;
+        height: 1.7rem;
+        min-width: 1.7rem;
+        background: var(--orange-color);
+      }
+    }
+    .active {
+      background: var(--primary-color);
+      svg {
+        fill: var(--secondary-color);
+      }
+      span {
+        color: var(--secondary-color);
+      }
+      &::after {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 1rem;
+        content: "";
+        background: url(../../../../assets/icons/arrow-forward.svg) no-repeat center;
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}

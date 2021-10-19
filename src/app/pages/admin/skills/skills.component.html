@@ -1,0 +1,18 @@
+<div class="skills">
+  <div class="skills_header">
+    <h2>Менеджер навыков</h2>
+    <ion-icon matTooltip="добавить" matTooltipPosition="above" class="skills_header-add-icon" name="add-circle"></ion-icon>
+  </div>
+  <mat-form-field class="custom-input">
+    <input matInput [(ngModel)]="query">
+    <mat-placeholder class="placeholder">Я ищу...</mat-placeholder>
+  </mat-form-field>
+  <mat-list role="list" class="skills_list">
+    <mat-list-item
+      *ngFor="let skill of items | async | search : 'name' : query"
+      role="listitem"
+    >
+      {{ skill.name }}
+    </mat-list-item>
+  </mat-list>
+</div>

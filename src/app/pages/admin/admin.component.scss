@@ -1,0 +1,17 @@
+@import "grid";
+
+.app {
+  padding: 1rem;
+  width: 100%;
+  max-width: 1800px;
+  margin: auto !important;
+  @include row();
+  &__nav {
+    @include col();
+    @include size(2/10);
+  }
+  &__content {
+    @include col();
+    @include size(8/10);
+  }
+}
