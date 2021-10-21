@@ -22,6 +22,20 @@ body {
   flex: 1 1 auto;
 }
 
+.skills-edit-dialog {
+  width: 60vw;
+  max-width: 1200px !important;
+  .mat-dialog-container {
+    border-radius: 1rem !important;
+  }
+}
+
+.mat-form-field-flex {
+  background-color: transparent !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .content {
   border-radius: 1.5rem;
   background: white;
@@ -37,4 +51,5 @@ body {
   --orange-color: #{$orange-color};
   --primary-bg-color: #{$primary-bg-color};
   --secondary-bg-color: #{$secondary-bg-color};
+  --red-color: #{$red-color};
 }

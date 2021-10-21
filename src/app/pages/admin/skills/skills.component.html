@@ -11,6 +11,7 @@
     <mat-list-item
       *ngFor="let skill of items | async | search : 'name' : query"
       role="listitem"
+      [routerLink]="skill.id"
     >
       {{ skill.name }}
     </mat-list-item>

@@ -4,16 +4,22 @@ import { NavAdminComponent } from './components/nav-admin/nav-admin.component';
 import { RouterModule } from '@angular/router';
 import { MatRippleModule } from '@angular/material/core';
 import { SearchPipe } from './pipes/search.pipe';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { SetToArrayPipe } from './pipes/set-to-array.pipe';
+import { MatButtonModule } from '@angular/material/button';
 
 const modules = [
   RouterModule,
-  MatRippleModule
+  MatRippleModule,
+  MatProgressSpinnerModule,
+  MatButtonModule
 ];
 
 @NgModule({
   declarations: [
     NavAdminComponent,
-    SearchPipe
+    SearchPipe,
+    SetToArrayPipe
   ],
   imports: [
     CommonModule,
@@ -22,7 +28,8 @@ const modules = [
     exports: [
         NavAdminComponent,
         ...modules,
-        SearchPipe
+        SearchPipe,
+        SetToArrayPipe
     ]
 })
 export class SharedModule { }
